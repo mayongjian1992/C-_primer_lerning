@@ -4,36 +4,34 @@
 	> Mail: micheal.ma@powervision.me
 	> Created Time: 2018年12月14日 星期五 16时23分11秒
  ************************************************************************/
-
-#include<iostream>
+#include <iostream>
 using namespace std;
-
 
 int main(int argc,const char *argv[])
 {
-    int count , val;
-    int cnt;
+    int count;
+    int val;
 
     if(std::cin >> count)
     {
-        cnt=1;
-        while(cin >> val)
+        int cnt=1;
+        while(std::cin >> val)
         {
             if(count == val)
             {
-                ++cnt;
+                cnt++;
             }
             else
             {
-                cout << count <<" occurs "<<cnt <<" times "<<std::endl;
-                count =val;
-                cnt=1;
+                std::cout << count << " occurs "<<cnt<< " times "<<std::endl;
+                cnt = 1;
+                count = val;
             }
         }
-                
-        cout << count <<" occurs "<<cnt <<" times "<<std::endl;
+        
+        std::cout << count << " occurs "<<cnt<< " times "<<std::endl;
 
     }
-
     return 0;
+
 }

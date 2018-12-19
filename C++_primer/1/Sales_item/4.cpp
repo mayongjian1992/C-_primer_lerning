@@ -2,41 +2,42 @@
 	> File Name: 4.cpp
 	> Author:micheal.ma
 	> Mail: micheal.ma@powervision.me
-	> Created Time: 2018年12月17日 星期一 14时36分30秒
+	> Created Time: 2018年12月18日 星期二 09时36分46秒
  ************************************************************************/
 
 #include<iostream>
 #include "Sales_item.h"
+
 using namespace std;
 
 int main(int argc,const char *argv[])
 {
-    Sales_item item,total;
-    
-    if(std::cin >> total )
+    Sales_item total,trans;
+    int cnt;
+
+    if(std::cin >> total)
     {
-        while(std::cin >> item)
+        int cnt=1;
+        while(std::cin >> trans)
         {
-            
-            if( compareIsbn( total, item) )
+            if( total.isbn() == trans.isbn() )
             {
-                total += item;
+                total += trans;
+                ++cnt;
             }
             else
             {
-                std::cout << "the item total is "<< total << std::endl ;
-                total=item; 
+                std::cout << "the total is "<< total <<" cnt ="<< cnt <<std::endl;
+                cnt =1;
+                total=trans;
             }
         }
-        
-        std::cout << "the item total is "<< total << std::endl ;
-        return 0;
+        std::cout << "the total is "<< total <<" cnt = "<< cnt <<std::endl;
     }
     else
-    { 
-        cout << "nothing"<<endl;
-        return -1;
+    {
+        std::cout << "nothing"<<std::endl;
     }
-
     return 0;
 }
+

@@ -27,6 +27,10 @@ int main(int argc,const char *argv[])
         {
             sum = vInt[i]+ vInt[vInt.size()-1-i];
             cout << sum <<" ";
+            if( (i+1) % 5 ==0)
+            {
+                cout << endl;
+            }
         }
         
         cout <<endl;

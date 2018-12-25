@@ -1,0 +1,16 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+Sales_data	Sales_data.h	/^struct Sales_data$/;"	s
+_SALES_DATA_H	Sales_data.h	9;"	d
+bookNo	Sales_data.h	/^    string bookNo;$/;"	m	struct:Sales_data
+combine	Sales_data.h	/^Sales_data& Sales_data::combine(const Sales_data &data)$/;"	f	class:Sales_data
+isbn	Sales_data.h	/^    const string &isbn(void) const$/;"	f	struct:Sales_data
+main	main.cpp	/^int main(int argc,const char *argv[])$/;"	f
+print	Sales_data.h	/^std::ostream& print(std::ostream &o, const Sales_data &data)$/;"	f
+read	Sales_data.h	/^std::istream& read(std::istream &in, Sales_data &data)$/;"	f
+revenue	Sales_data.h	/^    double revenue=0.0;$/;"	m	struct:Sales_data
+saleCnt	Sales_data.h	/^    unsigned saleCnt=0;$/;"	m	struct:Sales_data

@@ -1,0 +1,26 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+Screen	Screen.h	/^    Screen(pos ht, pos wd, char c) : height(ht),width(wd),contents(ht*wd,c){std::cout<<"Screen(pos,pos,char)"<<std::endl;}$/;"	f	class:Screen
+Screen	Screen.h	/^    Screen(pos ht,pos wd) : height(ht),width(wd),contents(ht * wd, ' '){std::cout << "Screen(pos,pos)"<<std::endl;}$/;"	f	class:Screen
+Screen	Screen.h	/^class Screen $/;"	c
+_SCREEN_H	Screen.h	9;"	d
+access_str	Screen.h	/^    mutable size_t access_str=0;$/;"	m	class:Screen
+contents	Screen.h	/^    std::string contents;$/;"	m	class:Screen
+cursor	Screen.h	/^    pos cursor=0;$/;"	m	class:Screen
+display	Screen.h	/^Screen& Screen::display(std::ostream &os)$/;"	f	class:Screen
+display	Screen.h	/^const Screen& Screen::display(std::ostream &os)const$/;"	f	class:Screen
+do_display	Screen.h	/^    void do_display(std::ostream &os) const { os << contents <<std::endl; }$/;"	f	class:Screen
+get	Screen.h	/^    char get()const { return contents[cursor]; }$/;"	f	class:Screen
+get	Screen.h	/^char Screen::get(pos r,pos c)const$/;"	f	class:Screen
+height	Screen.h	/^    pos height=0, width=0;$/;"	m	class:Screen
+main	main.cpp	/^int main(int argc,const char *argv[])$/;"	f
+move	Screen.h	/^inline Screen& Screen::move(pos r, pos c)$/;"	f	class:Screen
+pos	Screen.h	/^    typedef std::string::size_type pos;$/;"	t	class:Screen
+set	Screen.h	/^    Screen& set(char c)$/;"	f	class:Screen
+set	Screen.h	/^    Screen& set(pos ht, pos wd, char c)$/;"	f	class:Screen
+some_member	Screen.h	/^    size_t some_member(void) const$/;"	f	class:Screen
+width	Screen.h	/^    pos height=0, width=0;$/;"	m	class:Screen

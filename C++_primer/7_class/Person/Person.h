@@ -24,8 +24,12 @@ struct Person
     
     int setName(const string &name);
     int setAddress(const string &address);
-};
 
+    /*构造函数*/
+    Person()=default;
+    Person(const string &name, const string &address) : name(name),address(address){}
+
+};
 int Person::setName(const string &name)
 {
     this->name=name;

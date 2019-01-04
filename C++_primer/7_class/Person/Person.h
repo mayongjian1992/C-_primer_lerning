@@ -30,7 +30,8 @@ struct Person
     Person(const string &name, const string &address) : name(name),address(address){}
 
 };
-int Person::setName(const string &name)
+
+int Person::setName( string &name)
 {
     this->name=name;
     return 0;

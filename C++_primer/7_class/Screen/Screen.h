@@ -29,7 +29,7 @@ public:
 
     Screen& set(char c)
     {
-        contents[cursor]=c;
+        contents[cursor]mZc;
         return *this;
     }
 

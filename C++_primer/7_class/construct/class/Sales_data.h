@@ -7,13 +7,14 @@
 
 #ifndef _SALES_DATA_H
 #define _SALES_DATA_H
-#include <iostream>
+
+#include <iostream>              /*头文件中不应该有using声明*/
 #include <string>
 
 class Sales_data 
 {
 
-/*友元函数声明*/
+/*友元函数声明  仅声明了函数的权限 并不是一条真正的函数声明 所以在类外必须有该函数的声明*/
     friend std::istream& read(std::istream &is,Sales_data &data);
     friend std::ostream& print(std::ostream &os,const Sales_data &data);
     friend Sales_data add(const Sales_data &data1, const Sales_data &data2);
@@ -24,10 +25,20 @@ public:
     Sales_data& combine(const Sales_data &data);
 
     /*构造函数*/
-    Sales_data()=default;
-    Sales_data(const std::string &str):bookNo(str){}
-    Sales_data(const std::string &str,unsigned cnt, double price) : bookNo(str),saleCnt(cnt),revenue(price * saleCnt){}
-    Sales_data(std::istream &is);
+
+    /*接受三个构造函数的版本*/
+    Sales_data(const std::string &str,unsigned cnt, double price) : bookNo(str),saleCnt(cnt),revenue(price * saleCnt){std::cout << "三个参数版本"<<std::endl;}
+    
+    /*委托构造函数*/
+    Sales_data():Sales_data("",0,0){std::cout << "默认版本"<<std::endl;}
+    
+    /*只接受一个参数的构造函数 是转换构造函数 可以使用关键字 explicit 抑制隐市转换*/
+     explicit Sales_data(std::string s):Sales_data(s,0,0){std::cout << "一个参数的版本"<<std::endl;}
+     explicit Sales_data(std::istream &is):Sales_data()
+                                            { read(is,*this);
+                                                std::cout << "iostream 版本"<<std::endl;
+                                             }
+    
 
 private:
     std::string bookNo;
@@ -38,45 +49,14 @@ private:
 
 
 
-Sales_data& Sales_data::combine(const Sales_data &data)
-{
-    this->saleCnt += data.saleCnt;
-    this->revenue += data.revenue;
-    return *this;
-}
-
-
-
-
-
 /*类外函数*/
 
-std::istream& read(std::istream &is,Sales_data &data)
-{
-    double price=0.0;
-    is >> data.bookNo >> data.saleCnt >> price;
-    data.revenue  = price * data.saleCnt;
-    return is;
-}
+std::istream& read(std::istream &is,Sales_data &data);
 
 
-std::ostream& print(std::ostream &os,const Sales_data &data)
-{
-    os << data.bookNo << " "<<data.saleCnt << " "<<data.revenue<<" "<<data.avg_price()<<std::endl;
-    return os;
-}
+std::ostream& print(std::ostream &os,const Sales_data &data);
 
-Sales_data add(const Sales_data &data1, const Sales_data &data2)
-{
-    Sales_data sum = data1;
+Sales_data add(const Sales_data &data1, const Sales_data &data2);
 
-    sum.combine(data2);
-    return sum;
-}
-
-Sales_data::Sales_data(std::istream &is)
-{
-    read(is,*this);    
-}
 
 #endif

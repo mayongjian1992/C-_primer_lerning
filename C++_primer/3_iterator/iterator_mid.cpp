@@ -32,7 +32,7 @@
          {
              end=mid;
          }
-         else
+        else
          {
              beg=mid+1;
          }

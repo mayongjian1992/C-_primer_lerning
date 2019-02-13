@@ -32,7 +32,7 @@ int main(int argc,const char *argv[])
     vector<string> vStr;                  /*创建一个string 容器*/
     string str;                           /*创建一个string*/
 
-    while(input >> str)          /*调用getline函数*/
+    while(getline(input,str) )          /*调用getline函数*/
     {
         vStr.push_back(str);
     }

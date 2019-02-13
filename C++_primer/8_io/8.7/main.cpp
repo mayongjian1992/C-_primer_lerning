@@ -12,7 +12,7 @@ using namespace std;
 int main(int argc,const char *argv[])
 {
     fstream input(argv[1],ifstream::in);
-    fstream output(argv[2],ofstream::app);
+    fstream output(argv[2], ofstream::out | ofstream::trunc);
     
     if(!input || !output)
     {

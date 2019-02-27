@@ -20,6 +20,11 @@ int main(int argc,const char *argv[])
 
     cout << *p1 <<endl;
     cout << *p2 << endl;
+
+    unique_ptr<string> p3(new string("hello") );
+    unique_ptr<string>p4;
+
+    p4.reset(p3.release() );
     
 
 

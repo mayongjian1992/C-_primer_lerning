@@ -22,7 +22,7 @@ public:
     Employee() { mysn = ++sn; } 
     Employee(const std::string& s) { name = s; mysn = ++sn; }
     Employee( Employee &e ) { name=e.name; mysn = ++sn; }
-    Employee& operator==(Employee &e) 
+    Employee& operator=(Employee &e) 
     {
         name = e.name;
         return *this;

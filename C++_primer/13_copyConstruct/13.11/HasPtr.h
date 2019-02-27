@@ -22,6 +22,7 @@ public:
 
     HasPtr& operator==(HasPtr& hp)
     {
+        std::cout << "operator = "<<std::endl;
         ps = new std::string(*hp.ps);
         i=hp.i;
         return *this;
